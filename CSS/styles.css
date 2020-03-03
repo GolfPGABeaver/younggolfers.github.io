@@ -1,0 +1,127 @@
+/* ---------- Resets ---------- */
+
+h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, 
+body, header, div, input, main, section, aside, footer,
+nav, form, select, option, table, tr, td, th, button, textarea {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ---------- Links ---------- */
+
+.a {
+    text-decoration: none;
+    color: rgba(144,190,31,1);
+}
+
+.a:hover {
+    text-decoration: underline;
+}
+
+
+/* ---------- Typeography ---------- */
+
+body {         
+    font-family: 'Poppins', sans-serif;
+}
+
+.xlightFont {   font-weight: 200;}
+.lightFont {    font-weight: 300;}
+.normalFont {   font-weight: 400;}
+.boldFont {     font-weight: 600;}
+.xboldFont {    font-weight: 800;}
+
+.xxsFont {      font-size: 10px;}
+.xsFont {       font-size: 11px;}
+.sFont {        font-size: 13px;}
+.mFont {        font-size: 16px;}
+.lFont {        font-size: 20px;}
+.xlFont {       font-size: 25px;line-height: 35px; /* 10% font-size */}
+.xxlFont{       font-size: 31px;}
+
+@media only screen and (min-width: 300px) {
+    .xxsFont {  font-size: 11px;}
+    .xsFont {   font-size: 13px;}
+    .sFont  {   font-size: 16px;}
+    .mFont  {   font-size: 20px;}
+    .lFont  {   font-size: 25px;}
+    .xlFont {   font-size: 31px;line-height: 39px;}
+    .xxlFont{   font-size: 38px;}
+}
+
+@media only screen and (min-width: 600px) {
+    .xxsFont {  font-size: 12px;}
+    .xsFont {   font-size: 15px;}
+    .sFont  {   font-size: 19px;}
+    .mFont  {   font-size: 24px;}
+    .lFont  {   font-size: 30px;}
+    .xlFont {   font-size: 37px;line-height: 44px;}
+    .xxlFont{   font-size: 45px;}
+}
+
+@media only screen and (min-width: 900px) {
+    .xxsFont {  font-size: 13px;}
+    .xsFont {   font-size: 17px;}
+    .sFont  {   font-size: 22px;}
+    .mFont  {   font-size: 28px;}
+    .lFont  {   font-size: 35px;}
+    .xlFont {   font-size: 43px;line-height: 52px;}
+    .xxlFont{   font-size: 52px;}
+}
+
+/* ---------- Forms---------- */
+
+.input, .select, .textarea {
+    padding: 5px;
+    background-color: rgba(255,255,255,1);
+    border: 2px solid rgba(200,200,200,1);
+    border-radius: 5px;
+    font-weight: 200;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+    background-color: rgba(0,102,51,.05);
+    outline: none;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+    padding: 5px 40px;
+    font-weight: 600;
+    background-color: rgba(255,255,255,0);
+    color: rgba(255,255,255,1);
+    border: 2px solid rgba(255,255,255,1);
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgba(255,255,255,1);
+    color: rgba(0,102,51,1);
+}
+
+.btn-dark {
+    padding: 5px 40px;
+    font-weight: 600;
+    background-color: rgba(255,255,255,1);
+    color: rgba(0,102,51,1);
+    border: 2px solid rgba(0,102,51,1);
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.btn-dark:hover {
+    background-color: rgba(0,102,51,1);
+    color: rgba(255,255,255,1);
+}
