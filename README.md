@@ -1,2 +1,2 @@
 # younggolfers.github.io
-Junior Golf Programme test website
+Junior golf programme test website
