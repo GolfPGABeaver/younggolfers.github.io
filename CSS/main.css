@@ -1,0 +1,947 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap");
+@import url("styles.css");
+
+/* ####################          HOMPAGE          #################### */
+
+/* >>>>>>>>>> HEADER <<<<<<<<<< */
+
+/* ---------- Top Header ---------- */
+.homeTopHeader {
+    background-image: linear-gradient(90deg, rgba(0,102,51,1), rgba(57,169,53,1), rgba(144,190,31,1));
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    border-bottom: 4px solid rgba(255,255,255,1);
+}
+
+.homeTopHeader a {
+    width: 100px;
+    display: flex;
+    height: 60px;
+    align-items: center;
+}
+
+.homeTopHeader img {
+    position: relative;
+    z-index: 98;
+    height: 30px;
+    width: auto;
+    margin: 10px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 97;
+}
+
+nav .toggler {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 99;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+}
+
+nav .hamburger {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 98;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hamburger middle line */
+nav .hamburger > div {
+    position: relative;
+    z-index: 98;
+    width: 100%;
+    height: 2px;
+    background: rgba(255,255,255,1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease-in;
+}
+
+/* Top and bottom lines */
+nav .hamburger > div:before,
+nav .hamburger > div:after {
+    content: '';
+    position: absolute;
+    z-index: 98;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background: rgba(255,255,255,1);
+}
+
+/* moves line down */
+nav .hamburger > div:after {
+    top: 10px;
+}
+
+/* Toggler animate */
+nav .toggler:checked + .hamburger > div {
+    transform: rotate(135deg);
+}
+
+/* Turn lines into X */
+nav .toggler:checked + .hamburger > div:before,
+nav .toggler:checked + .hamburger > div:after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+/* Rotate on hover when checked */
+nav .toggler:checked:hover + .hamburger > div {
+    transform: rotate(225deg);
+}
+
+/* show menu */
+nav .toggler:checked ~ .menu {
+    visibility: visible;
+}
+
+nav .toggler:checked ~ .menu > div {
+    transform: scale(1);
+    transition-duration: .75s;
+}
+
+nav .toggler:checked ~ .menu > div > div {
+    opacity: 1;
+    transition: opacity .4s ease;
+}
+
+nav .menu {
+    position: fixed;
+    z-index: 96;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .menu > div {
+    background: rgba(0,0,0,.9);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: scale(0);
+    transition: all 0.4s ease;
+}
+
+nav .menu > div > div {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+nav .menu > div > div > ul {
+    list-style: none;
+    color: rgba(255,255,255,1);
+    font-size: 1.5rem;
+}
+
+nav .menu > div > div > ul > li {
+    list-style: none;
+    color: rgba(255,255,255,1);
+    display: flex;
+    justify-content: center;
+}
+
+nav .menu > div > div > ul > li > a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav .menu > div > div > ul > li > a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (min-width: 600px) {
+    .homeTopHeader {                    height: 80px;}
+    .homeTopHeader a {                  height: 80px;}
+    .homeTopHeader img {                height: 40px;
+                                        margin: 15px;}
+    nav .toggler {                      display: none;}
+    nav .hamburger {                    display: none;}
+    nav .menu {                         visibility: visible;
+                                        width: 100%;
+                                        height: 80px;}
+    nav .menu > div {                   transform: scale(1);
+                                        background: none;
+                                        align-items: flex-start;
+                                        justify-content: flex-start;
+                                        width: 100%;
+                                        height: 100%;}
+    nav .menu > div > div {             opacity: 1;
+                                        width: 100%;
+                                        height: 80px;}
+    nav .menu > div > div > ul {        display: flex;
+                                        width: 100%;
+                                        justify-content: flex-end;}
+    nav .menu > div > div > ul > li {   margin: 0 .5%;}
+}
+
+@media only screen and (min-width: 900px) {
+    .homeTopHeader {                    height: 100px;}
+    .homeTopHeader a {                  height: 100px;} 
+    .homeTopHeader img {                height: 50px;
+                                        margin: 25px;}
+    nav .menu {                         height: 100px;}
+    nav .menu > div > div {             height: 100px;}
+    nav .menu > div > div > ul > li {   margin: 0 2.5%;}
+}
+
+/* ####################          LOGIN          #################### */
+
+.loginTopHeader {
+    top: 0;
+}
+
+/* ---------- Bottom Header ---------- */
+
+.homeBottomHeader {
+    padding: 100px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-image: url("Images/Homepage/HomePicture.jpg");
+    background-color: rgba(0,0,0,.25);
+    background-size: cover;
+    background-position: 50% 25%;
+    color: rgba(255,255,255,1);
+}
+
+.homeBottomHeader h1 {
+    margin: 20px 0;
+    line-height: 53px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.homeBottomHeader p {
+    margin: 20px 0;
+    line-height: 24px;
+    font-weight: 200;
+}
+
+.homeBottomHeader a {
+    margin: 20px 0;
+}
+
+@media only screen and (min-width: 600px) {
+    .homeBottomHeader {     padding: 120px 30px 50px;}    
+    .homeBottomHeader h1 {  margin: 30px 0;
+                            line-height: 77px;}
+    .homeBottomHeader p {   margin: 30px 0;
+                            line-height: 35px;}
+    .homeBottomHeader a {   margin: 30px 0;}
+}
+
+@media only screen and (min-width: 900px) {
+    .homeBottomHeader {     padding: 140px 40px 60px;}
+    .homeBottomHeader h1 {  width: 66.66%;
+                            line-height: 91px;
+                            margin: 40px 0;}
+    .homeBottomHeader p {   width: 66.66%;
+                            line-height: 41px;
+                            margin: 40px 0;}
+    .homeBottomHeader a {   margin: 40px 0;}
+}
+
+/* ####################          COACHS          #################### */
+
+.coachsBottomHeader {
+    padding: 100px 50px 40px;
+    background-image: url("Images/Coachs/CoachPicture.JPG");
+    background-size: cover;
+    background-position: 50% 40%;
+}
+
+@media only screen and (min-width: 600px) {   
+    .coachsBottomHeader {   padding: 100px 100x 40px;}
+}
+
+/* ####################          FAMILIES          #################### */
+
+.familiesBottomHeader {
+    background-image: url("Images/Families/FamiliesPicture.JPG");
+    background-position: 0% 40%;
+}
+
+/* >>>>>>>>>> MAIN <<<<<<<<<< */
+
+/* ---------- First Section ---------- */
+
+.homeFirstSection {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 50px auto;
+}
+
+.homeFirstSection div {
+    margin: 25px 0;
+}
+
+.homeFirstSection div img {
+    width: 100px;
+}
+
+.homeFirstSection div h2 {
+    color: rgba(0,102,51,1);
+    font-weight: 500;
+    margin: 20px 0 5px;
+}
+
+.homeFirstSection div p {
+    font-weight: 300;
+    color: rgba(150,150,150,1);
+}
+
+@media only screen and (min-width: 600px) {
+    .homeFirstSection {             width: 90%;
+                                    flex-direction: row;}
+    .homeFirstSection div {         margin: 25px 10px;}
+    .homeFirstSection div img {     width: 75px;}
+}
+
+@media only screen and (min-width: 900px) {
+    .homeFirstSection div {         margin: 25px 20px;}
+    .homeFirstSection div img {     width: 100px;}
+}
+
+/* ####################          COACHS          #################### */
+
+.coachsFirstSection {
+    flex-direction: column;
+    width: 90%;
+}
+
+.coachsFirstSection h2 {
+    margin: 0 0 30px;
+    text-transform: uppercase;
+    color: rgba(0,102,51,1);
+}
+
+.coachsFirstSection div {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+}
+
+.coachsFirstSection div img {
+    width: 50px;
+}
+
+.coachsFirstSection div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5px;
+}
+
+.coachsFirstSection div > div h2 {
+    text-transform: none;
+}
+
+@media only screen and (min-width: 600px) {
+    .coachsFirstSection {               width: 75%;}
+    .coachsFirstSection h2 {            margin: 0 0 20px 0;}
+    .coachsFirstSection div {           flex-direction: row;
+                                        margin: 20px auto;}
+    .coachsFirstSection div img {       width: 75px;}
+    .coachsFirstSection div > div h2,
+    .coachsFirstSection div > div p {   align-self: flex-start;
+                                        text-align: left;
+                                        margin-left: 50px;}
+}
+
+@media only screen and (min-width: 900px) {
+    .coachsFirstSection {               width: 60%;}
+}
+
+/* ####################          LOGIN          #################### */
+
+
+.loginFirstSection {
+    margin: 80px 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.loginSecondSection {   
+    margin: 50px 30px 50px;
+}
+
+.loginFirstSection > div {
+    width: 450px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 0 0 20px;
+    box-shadow: 0 1px 10px 2px rgba(150,150,150,1);
+    background-color: rgba(240,240,240,1);
+}
+
+.loginSecondSection > div {
+    background-color: rgba(255,255,255,1);
+}
+
+.loginFirstSection > div > h2 {
+    text-transform: uppercase;
+    color: rgba(255,255,255,1);
+    padding: 20px;
+    margin: 0 auto 20px;
+    background-color: rgba(57,169,53,1);
+    border-radius: 20px 20px 0 0;
+}
+
+.loginFirstSection > div > form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.loginFirstSection > div > form > input,
+.loginFirstSection > div > form > select,
+.loginFirstSection > div > form > textarea {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.loginFirstSection > div > form > select {
+    color: rgba(100,100,100,1);
+}
+
+.loginFirstSection > div > form > div {
+    margin: 10px 0 10px 20px;
+}
+
+.loginFirstSection > div > form > div > div {
+    text-align: left;
+    margin: 5px 0;
+}
+
+@media only screen and (min-width: 600px) {
+    .loginFirstSection {    margin: 100px 10px 0;}
+    .loginSecondSection {   margin: 50px 30px 50px;}
+}
+
+@media only screen and (min-width: 900px) {
+    .loginFirstSection {    margin: 120px 10px 0;}
+    .loginSecondSection {   margin: 50px 30px 50px;}
+}
+
+/* ####################          SUPPORT          #################### */
+
+.supportMain {
+    margin: 80px 10px 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.supportFirstSection {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 0 0 20px;
+    box-shadow: 0 1px 10px 2px rgba(150,150,150,1);
+    max-width: 400px;
+}
+
+.supportFirstSection > h2 {
+    text-transform: uppercase;
+    color: rgba(255,255,255,1);
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto 20px;
+    background-color: rgba(57,169,53,1);
+    border-radius: 20px 20px 0 0;
+}
+
+.supportFirstSection > form > input,
+.supportFirstSection > form > textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.supportSecondSection > div {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin: 20px 0;
+    padding: 0 0 20px;
+    box-shadow: 0 1px 10px 2px rgba(150,150,150,1);
+}
+
+.supportSecondSection > div > h2 {
+    text-transform: uppercase;
+    color: rgba(255,255,255,1);
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto 20px;
+    background-color: rgba(57,169,53,1);
+    border-radius: 20px 20px 0 0;
+}
+
+.supportSecondSection > div > div {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+@media only screen and (min-width: 600px) {
+    .supportMain {  margin: 120px 10px 0;}
+}
+
+@media only screen and (min-width: 900px) {
+    .supportMain {          margin: 140px 10px 0;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: flex-start;}
+    .supportFirstSection,
+    .supportsecondSection { margin: 0 50px;} 
+}
+
+/* ---------- Second Section ---------- */
+
+.homeSecondSection {
+    padding: 50px 7.5%;
+    background-image: linear-gradient(90deg, rgba(57,169,53,1), rgba(144,190,31,1));
+    text-align: center;
+    color: rgba(255,255,255,1);
+}
+
+.homeSecondSection h3 {
+    font-weight: 200;
+}
+
+.homeSecondSection b {
+    font-weight: 600;
+}
+
+.homeSecondSection a {
+    display: inline-block;
+    margin: 20px 0 0;
+}
+
+/* ####################          COACHS          #################### */
+
+.coachsSecondSection {
+    background-image: linear-gradient(270deg, rgba(0,102,51,1), rgba(57,169,53,1), rgba(144,190,31,1));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coachsSecondSection > div {
+    margin: 20px 0;
+    padding: 20px 2%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 75%;
+}
+
+.coachsSecondSection > div > h3 {
+    text-transform: uppercase;
+}
+
+.coachsSecondSection > div > h6 {
+    margin: 0 0 20px;
+}
+
+.coachsSecondSection > div > div {
+    padding: 10px 0;
+    border-top: 2px solid rgba(255,255,255,1);
+}
+
+.coachsSecondSection > div > div > p {
+    margin: 5px 0;
+}
+
+.coachsSecondSection a {
+    margin: 10px auto 0;
+}
+
+@media only screen and (min-width: 300px) {
+    .coachsSecondSection > div {    width: 200px;}
+    .coachsSecondSection {          flex-direction: row;
+                                    flex-wrap: wrap;
+                                    align-items: flex-start;
+                                    justify-content: space-evenly;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .coachsSecondSection > div {    width: 255px;}
+}
+
+@media only screen and (min-width: 900px) {
+    .coachSecondSection {                   padding: 50px auto;}
+    .coachsSecondSection > div {            width: 25%;}
+    .coachsSecondSection > div > div {      height: 280px;}
+
+}
+
+/* ####################          FAMILIES          #################### */
+
+.familiesSecondSection {
+    background-image: linear-gradient(90deg, rgba(57,169,53,1), rgba(144,190,31,1));
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: rgba(255,255,255,1);
+}
+
+.familiesSecondSection > div#mapContent {
+    margin: 20px 0 20px;
+}
+
+.familiesSecondSection > div > p {
+    padding: 0 0 20px;
+
+}
+
+.familiesSecondSection > div > div {
+    padding: 20px 10px 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    color: rgba(0,0,0,1);
+    background-color: rgba(255,255,255,.9);
+}
+
+.familiesSecondSection > div > div > h4 {
+    color: rgba(0,102,51,1);
+}
+
+.familiesSecondSection > div > div > h5 {
+    padding: 0 0 10px;
+}
+
+.familiesSecondSection > div > div > div > h6 {
+    padding: 10px 0 0;
+    color: rgba(0,102,51,1);
+}
+
+.familiesSecondSection > div > div > div > p {
+    color: rgba(100,100,100,1)
+}
+
+.familiesSecondSection > div#map {
+    margin: 20px 0 0;
+    height: 300px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+@media only screen and (min-width: 300px) {
+    .familiesSecondSection > div > div > div {          display: flex;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                        text-align: left;}
+    .familiesSecondSection > div > div > div > h6 {     padding: 0;
+                                                        flex-basis: 70px;}
+    .familiesSecondSection > div > div > div > p {      flex-basis: 150px;}
+    }
+
+@media only screen and (min-width: 600px) {
+    .familiesSecondSection {                            flex-direction: row;
+                                                        padding: 20px 20px 40px;}
+    .familiesSecondSection > div#mapContent {           margin: 20px 0 0;
+                                                        width: 50%;}
+    .familiesSecondSection > div > div > div {          flex-direction: column;}
+    .familiesSecondSection > div > div > div > h6 {     padding: 10px 0 0;
+                                                        flex-basis: auto;}
+    .familiesSecondSection > div > div > div > p {      flex-basis: auto;}
+    .familiesSecondSection > div#map {                  height: auto;
+                                                        width: 50%;
+                                                        margin-left: 20px;}
+}
+
+@media only screen and (min-width: 900px) {
+    .familiesSecondSection {                            padding: 40px 40px 60px;}
+    .familiesSecondSection > div#map {                  width: 75%;
+                                                        margin-left: 60px;}
+}
+
+
+
+/* ---------- Third Section ---------- */
+
+.homeThirdSection {
+    padding: 50px 7.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.homeThirdSection h4 {
+    flex-basis: 100%;
+    text-align: center;
+    color: rgba(0,102,51,1);
+}
+
+.homeThirdSection div {
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0,0,0,.1);
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.homeThirdSection img {
+    width: 30px;
+    padding: 10px;
+}
+
+.homeThirdSection p {
+    padding: 5px 10px;
+}
+
+@media only screen and (min-width: 300px) {
+    .homeThirdSection div {     flex-basis: 75%;}
+}
+
+@media only screen and (min-width: 600px) {
+    .homeThirdSection div {     flex-basis: 45%;}
+}
+
+@media only screen and (min-width: 900px) {
+    .homeThirdSection div {     flex-basis: 31%;}
+}
+
+/* ---------- Forth Section ---------- */
+
+.homeForthSection {
+    padding: 20px 7.5%;
+    background-image: linear-gradient(270deg, rgba(57,169,53,1), rgba(144,190,31,1));
+    text-align: center;
+    color: rgba(255,255,255,1);
+}
+
+.homeForthSection h4 {
+    font-weight: 500;
+}
+
+/* ---------- Fifth Section ---------- */
+
+.homeFifthSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homeFifthSection img {
+    margin: 75px 0 0;
+    width: 75%;
+    height: auto;
+}
+
+.homeFifthSection div {
+    width: 100%;
+    background-color: rgba(0,102,51,1);
+    text-align: center;
+}
+
+.homeFifthSection div h3 {
+    padding: 50px 7.5% 25px;
+    color: rgba(255,255,255,1);
+    font-weight: 300;
+}
+
+.homeFifthSection div a {
+    display: inline-block;
+    margin: 0 0 50px;
+}
+
+@media only screen and (min-width: 300px) {
+    .homeFifthSection img {     width: 67.5%;}
+}
+
+@media only screen and (min-width: 600px) {
+    .homeFifthSection img {     width: 50%;}
+}
+
+/* >>>>>>>>>> FOOTER <<<<<<<<<< */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* ---------- Footer Top ---------- */
+
+.homeFooterTop {
+    padding: 20px 7.5%;
+}
+
+.homeFooterTop h6 {
+    margin: 25px 0;
+}
+
+.homeFooterTop p {
+    font-weight: 300;
+    margin: 25px 0;
+}
+
+.homeFoooterTop form {
+    display: flex;
+    width: 100%
+}
+
+.homeFooterTop form input[type="email"] {
+    text-align: center;
+    padding: 10px 0;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.homeFooterTop form input[type="submit"] {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+p.FooterGRPD {
+    color: rgba(0,0,0,.7);
+}
+
+@media only screen and (min-width: 300px) {
+    .homeFooterTop form input[type="email"] {   width: 63%;
+                                                margin-right: 10px;}
+    .homeFooterTop form input[type="submit"] {  width: 30%;}
+}
+
+@media only screen and (min-width: 900px) {
+    .homeFooterTop form input[type="email"] {   width: 500px;} 
+    .homeFooterTop form input[type="submit"] {  width: 200px;}
+}
+
+/* ---------- Footer Top ---------- */
+
+.homeFooterBottom {
+    width: 100%;
+    margin: 20px 7.5% 0;
+    background-color: rgba(220,220,220,1);
+}
+
+.homeFooterSocial {
+    margin: 20px 7.5%;
+}
+
+.homeFooterSocial a, .homeFooterSocial img {
+    width: 30px;
+    height: 30px;
+    margin: 0 4px;
+}
+
+.homeFooterSocial img:hover {
+    background-color: rgba(144,190,31,1);
+}
+
+.homeFooterLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 10px 20px;
+    padding: 5px 0;
+}
+
+.homeFooterLinks a {
+    list-style: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(0,0,0,1);
+    padding: 4px 15px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+.homeFooterLinks a:hover {
+    color: rgba(144,190,31,1);
+    text-decoration: underline;
+}
+
+.homeFooterCopyright {
+    font-weight: 200;
+    color: rgba(0,0,0,1);
+    margin: 30px 7.5% 20px;
+}
+
+.homeFooterCopyright a {
+    font-weight: 300;
+    padding-left: 5px;
+    color: rgba(144,190,31,1);
+    text-decoration: none;
+}
+
+.homeFooterCopyright a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (min-width: 300px) {
+    .homeFooterSocial a, 
+    .homeFooterSocial img {     width: 40px;
+                                height: 40px;}
+}
+
+@media only screen and (min-width: 600px) {
+    .homeFooterLinks {          display: flex;
+                                flex-direction: row;
+                                margin: 0 auto;
+                                width: 75%;}
+    .homeFooterSocial a, 
+    .homeFooterSocial img {     width: 50px;
+                                height: 50px;}
+}
+
+@media only screen and (min-width: 900px) {
+    .homeFooterLinks {          width: 50%;}
+    .homeFooterLinks a {        padding: 4px 25px;}
+    .homeFooterSocial a,
+    .homeFooterSocial img {     margin: 10px 8px 0;}
+}
